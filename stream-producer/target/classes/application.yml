@@ -1,0 +1,21 @@
+server:
+  port: 8000
+spring:
+  cloud:
+    stream:
+      binders:
+        my_binder:
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                host: 117.50.163.15
+                port: 5672
+                virtual-host: /
+                username: admin
+                password: admin
+      bindings:
+        output:
+          binder: my_binder
+          destination: ttt
+
